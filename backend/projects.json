@@ -1,0 +1,25 @@
+[
+  {
+    "name": "Portfolio Website",
+    "author": "Manika Gupta",
+    "languages": [
+      "React",
+      "JavaScript",
+      "CSS",
+      "Bootstrap"
+    ],
+    "description": "A personal portfolio website showcasing work experience, skills, and projects with modern responsive design."
+  },
+  {
+    "name": "Junior Technology Consultant Project",
+    "author": "Manika Gupta",
+    "languages": [
+      "React",
+      "JavaScript",
+      "AWS",
+      "CSS",
+      "Bootstrap"
+    ],
+    "description": "Configured AWS resources, implemented automated alerts, and created reporting dashboards for improved monitoring and analytics."
+  }
+]

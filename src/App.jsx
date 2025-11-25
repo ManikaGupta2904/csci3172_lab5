@@ -1,29 +1,33 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
+import Home from "./pages/Home.jsx";
+import About from "./pages/About.jsx";
+import Projects from "./pages/Projects.jsx";
+import Skills from "./pages/Skills.jsx";
+import NotFound from "./pages/NotFound.jsx";
+import Header from "./components/Header.jsx";
+import Footer from "./components/Footer.jsx";
+import ErrorBoundary from "./components/ErrorBoundary.jsx";
 
-import Home from "./pages/Home";
-import About from "./pages/About";
-import Projects from "./pages/Projects";
-import NotFound from "./pages/NotFound";
-
-function App() {
+export default function App() {
   return (
-    <Router>
-      <Header />
+    <ErrorBoundary>
+      <Router>
+        <Header />
 
-      <div className="container mt-4">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/projects" element={<Projects />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </div>
+        <div className="container mt-4">
+          <ErrorBoundary>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/projects" element={<Projects />} />
+              <Route path="/skills" element={<Skills />} />
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </ErrorBoundary>
+        </div>
 
-      <Footer />
-    </Router>
+        <Footer />
+      </Router>
+    </ErrorBoundary>
   );
 }
-
-export default App;

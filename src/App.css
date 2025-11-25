@@ -1,38 +1,81 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+:root {
+  --bg-primary: #ffffff;
+  --text-primary: #1a1a1a;
+  --card-bg: #f8f9fa;
+  --border-color: #dee2e6;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  transition: filter 0.3s;
+[data-theme="dark"] {
+  --bg-primary: #1a1a1a;
+  --text-primary: #ffffff;
+  --card-bg: #2d2d2d;
+  --border-color: #495057;
 }
 
-.logo:hover { 
-  filter: drop-shadow(0 0 2em #646cffaa); 
-}
-
-.logo.react:hover { 
-  filter: drop-shadow(0 0 2em #61dafbaa); 
-}
-
-@keyframes spin {
-  to { transform: rotate(360deg); }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .logo.spin {
-    animation: spin 20s linear infinite;
-  }
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .card {
-  padding: 2em;
+  background-color: var(--card-bg);
+  color: var(--text-primary);
+  border-color: var(--border-color);
 }
 
-.read-the-docs {
-  color: #888;
+.btn {
+  transition: opacity 0.2s ease;
+}
+
+.btn:hover {
+  opacity: 0.8;
+}
+
+.navbar {
+  background-color: var(--card-bg);
+}
+
+.navbar-brand,
+.nav-link {
+  color: var(--text-primary);
+}
+
+.nav-link:hover {
+  opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .container {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .btn {
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+}
+
+.weather-icon {
+  transition: transform 0.3s ease;
+}
+
+.weather-icon:hover {
+  transform: scale(1.1);
 }
